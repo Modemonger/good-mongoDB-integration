@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const Course = mongoose.model('Course', new mongoose.Schema({
-    name: Object,
+    name: String,
     author:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Author'
