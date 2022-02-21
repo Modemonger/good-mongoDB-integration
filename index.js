@@ -31,7 +31,10 @@ async function createCourse(name, author) {
     console.log(result);
 }
 
+//createCourse('JS course', '621385ccb16231af005191ab');
 //createCourse('NodeJS course', '621385ccb16231af005191ab');
+//createCourse('Python course', '621385ccb16231af005191ab');
+//createCourse('C++ course', '621385ccb16231af005191ab');
 
 async function createComment(text, course) {
     const comment = new Comment({
@@ -66,8 +69,16 @@ async function listCourses() {
 async function listComments() {
     const comments = await Comment
         .find()
-        .populate('course', 'name -_id')
-        .select('text');
+        //.populate('course', 'name -_id')
+        .populate({
+            path: 'course',
+            select: 'name -_id',
+            populate: {
+                path: 'author',
+                //select: 'name'
+            }
+        })
+        .select('text -_id');
     console.log(comments);
 }
 
