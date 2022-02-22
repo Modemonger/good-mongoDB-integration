@@ -7,6 +7,7 @@ connectDB();
 const Author = require('./models/Author');
 const Course = require('./models/Course');
 const Comment = require('./models/Comments');
+const Server = require('./backend/server');
 
 async function createAuthor(name, bio, website) {
     const author = new Author ({
@@ -64,6 +65,7 @@ async function listCourses() {
         .populate('author', 'name -_id')
         .select('name');
     console.log(courses);
+    return courses;
 }
 
 async function listComments() {
@@ -75,12 +77,22 @@ async function listComments() {
             select: 'name -_id',
             populate: {
                 path: 'author',
-                //select: 'name'
+                select: 'name -_id'
             }
         })
         .select('text -_id');
     console.log(comments);
+    return comments;
 }
 
 //listCourses();
-listComments();
+//listComments();
+Server.get('/api/course', async (req, res) => {
+    res.status(200).send(await listCourses())
+})
+
+Server.get('/api/comments', async (req, res) => {
+    res.status(200).send(await listComments())
+})
+
+Server.use('/api/home', require('./backend/routes/courseRoute'));
