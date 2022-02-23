@@ -71,7 +71,6 @@ async function listCourses() {
 async function listComments() {
     const comments = await Comment
         .find()
-        //.populate('course', 'name -_id')
         .populate({
             path: 'course',
             select: 'name -_id',
@@ -88,11 +87,11 @@ async function listComments() {
 //listCourses();
 //listComments();
 Server.get('/api/course', async (req, res) => {
-    res.status(200).send(await listCourses())
+    res.status(200).json(await listCourses())
 })
 
 Server.get('/api/comments', async (req, res) => {
-    res.status(200).send(await listComments())
+    res.status(200).json(await listComments())
 })
 
 Server.use('/api/home', require('./backend/routes/courseRoute'));
