@@ -8,8 +8,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 
-app.use('/api/course', require('./routes/courseRoute'));
 app.use('/api/users', require('./routes/userRoutes'));
+app.use('/api/schedules', require('./routes/scheduleRoutes'));
 
 app.use(errorHandler);
 

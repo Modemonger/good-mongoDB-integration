@@ -37,6 +37,7 @@ const registerUser = asyncHandler( async (req, res) => {
 
     if(user){
         res.status(201).json({
+            message: 'User registered as',
             _id: user.id,
             name: user.name,
             email: user.email,
@@ -47,15 +48,12 @@ const registerUser = asyncHandler( async (req, res) => {
         throw new Error('Invalid user data');
     }
 
-    res.json({ message: 'Register user' });
-
 });
 
 const loginUser = asyncHandler( async (req, res) => {
     const { email, password } = req.body;
 
     const  user = await User.findOne({email});
-    console.log(user.salt);
 
     const hashed = await crypto.createHmac('sha256', user.salt);
     hashed.update(password);
@@ -65,15 +63,12 @@ const loginUser = asyncHandler( async (req, res) => {
             _id: user.id,
             name: user.name,
             email: user.email,
-            salt: user.salt,
-            token: generateToken(user._id)
+            token: req.body.token,
         })
     } else {
         res.status(400);
         throw new Error('Invalid credentials');
     }
-
-    res.json({ message: 'Login user' });
 });
 
 const getUser = asyncHandler( async (req, res) => {
