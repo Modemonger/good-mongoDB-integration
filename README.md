@@ -1,21 +1,23 @@
 # Basic CRUD linked to mongoDB.
 
-**Includes:**
+**Includes:** \
     Get, \
     Post, \
     Update, \
-    Delete. \
+    Delete \
+**Methods.**
 
-User authentication and password encryption.
-Bigining of a scheduling app.
+### Uses user authentication and password encryption.
 
-Create `.env` file with: \
-    **DB_KEY** = mongoDB connection string, \
-    **NODE_ENV** = development, \
-    **JWT_SECRET** = containing a string for encrypion
+## Create `.env` file with:
+    DB_KEY = <mongoDB connection string with password>
+    NODE_ENV = development
+    JWT_SECRET = <containing a string for encrypion>
 
-### 'npm install'
+## `npm install`
 Get's required packages.
 
-### 'npm run start' 
+## `npm run start` 
 Starts node project.
+
+**Bigining of a small scheduling app with users.**
