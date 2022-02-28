@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
+
+    const navigate = useNavigate();
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -29,26 +32,28 @@ export const Register = () => {
             style={{
                 display: error ? '' : 'none',
             }}>
-            <h1>Please enter all the fields</h1>
+            <h1>Could not create user.</h1>
             </div>
         );
     };
 
     const submit = e => {
         e.preventDefault();
-        if (name === '' || email === '' || password === '') {
-            setError(true);
-        } else {
+        axios.post('/api/users/', {name: name, email: email, password: password})
+        .then(response => response.data)
+        .then(data => {
+            window.localStorage.setItem('access_token', data.token);
+            console.log(data);
             setSubmitted(true);
             setError(false);
-            axios.post('/api/users/', {name: name, email: email, password: password})
-            .then(response => response.data)
-            .then(data => {
-                window.localStorage.setItem('access_token', data.token);
-                console.log(data);
-            })
-            .catch(err => console.log(err))
-        }
+            navigate('/');
+        })
+        .catch(err => {
+            console.log(err, 'error');
+            setError(true);
+            setSubmitted(false);
+        })
+        
     }
 
     return (

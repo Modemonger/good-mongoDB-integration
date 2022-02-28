@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+import { UserContext } from '../../context/UserContext';
 
 export const Login = () => {
+
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -9,7 +13,8 @@ export const Login = () => {
     const [submitted, setSubmitted] = useState(false);  
     const [error, setError] = useState(false);
 
-    let token = window.localStorage.getItem('access_token');
+    const {setUser} = useContext(UserContext);
+    const {userState} = useContext(UserContext);
 
     const successMessage = () => {
         return (
@@ -30,26 +35,28 @@ export const Login = () => {
             style={{
                 display: error ? '' : 'none',
             }}>
-            <h1>Please enter all the fields</h1>
+            <h1>Could not sign in.</h1>
             </div>
         );
     };
 
     const submit = e => {
         e.preventDefault();
-        if (email === '' || password === '') {
-            setError(true);
-        } else {
+        axios.post('/api/users/login', {email: email, password: password})
+        .then(response => response.data)
+        .then(data => {
+            window.localStorage.setItem('access_token', data.token);
+            setUser(data);
             setSubmitted(true);
             setError(false);
-            axios.post('/api/users/login', {email: email, password: password}, {headers: {authorization: 'Bearer '+token}})
-            .then(response => response.data)
-            .then(data => {
-                window.localStorage.setItem('access_token', data.token);
-                console.log(data);
-            })
-            .catch(err => console.log(err))
-        }
+            navigate('/');
+        })
+        .catch(err => {
+            console.log(err);
+            setError(true);
+            setSubmitted(false);
+        })
+        
     }
 
     return (

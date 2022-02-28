@@ -58,12 +58,11 @@ const loginUser = asyncHandler( async (req, res) => {
     const hashed = await crypto.createHmac('sha256', user.salt);
     hashed.update(password);
 
-    if( user && (hashed.digest('hex' === user.password))){
+    if( user && (hashed.digest('hex') === user.password)){
         res.json({
             _id: user.id,
             name: user.name,
             email: user.email,
-            token: req.body.token,
             token: generateToken(user._id)
         })
     } else {
@@ -73,7 +72,8 @@ const loginUser = asyncHandler( async (req, res) => {
 });
 
 const getUser = asyncHandler( async (req, res) => {
-    const { _id, name, email } = await User.findById(req.user.id);
+    const { _id, name, email } = await User.findById(req.body.id);
+    console.log(req);
 
     res.status(200).json({
         id: _id,

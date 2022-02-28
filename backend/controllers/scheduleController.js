@@ -17,8 +17,7 @@ const setSchedule = asyncHandler ( async (req, res) => {
 
     const schedule = await Schedule.create({
         title: req.body.title,
-        descrition: req.body.descrition,
-        weekday: req.body.weekday,
+        description: req.body.description,
         time_start: req.body.time_start,
         time_end: req.body.time_end,
         user: req.user.id
@@ -59,7 +58,9 @@ const updateSchedule = asyncHandler ( async (req, res) => {
 
 const deleteSchedule = asyncHandler ( async (req, res) => {
 
-    const schedule = await Schedule.findById(req.params.id);
+
+
+    const schedule = await Schedule.findById(req.params.id.slice(3));
 
     if(!schedule){
 

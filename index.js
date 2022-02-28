@@ -6,4 +6,5 @@ connectDB();
 
 const Server = require('./backend/server');
 
-Server.use('/api/home', require('./backend/routes/userRoutes'));
+Server.use('/api/users', require('./backend/routes/userRoutes'));
+Server.use('/api/schedule', require('./backend/routes/scheduleRoutes'));

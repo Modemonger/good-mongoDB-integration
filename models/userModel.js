@@ -17,9 +17,6 @@ const userSchema = mongoose.Schema(
         salt: {
             type: String,
             required: [true, 'Salt is required']
-        },
-        token: {
-            type: String
         }
     },
     {

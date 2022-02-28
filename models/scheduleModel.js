@@ -14,10 +14,6 @@ const scheduleSchema = mongoose.Schema(
         description: {
             type: String,
         },
-        weekday: {
-            type: String,
-            required: [true, 'Please choose a weekday'],
-        },
         time_start: {
             type: Date,
             required: [true, 'Please enter from when you will be busy'],
