@@ -58,30 +58,28 @@ export const Register = () => {
 
     return (
     <div id='registerPage' className='registerPage'>
-        <div className="container">
-            <div className="messages">
-                {errorMessage()}
-                {successMessage()}
-            </div>
-            <label>
-                <h1>User Registration</h1>
-                <form onSubmit={submit}>
-                    <label>
-                        Enter username:
-                        <input type="text" name="name" id="name" value={name} onChange = {(e)=> setName(e.target.value)}/>
-                    </label>
-                    <label>
-                        Enter email:
-                        <input type="email" name="email" id="email" value={email} onChange = {(e)=> setEmail(e.target.value)}/>
-                    </label>
-                    <label>
-                        Enter password:
-                        <input type="password" name="password" id="password" value={password} onChange = {(e)=> setPassword(e.target.value)}/>
-                    </label>
-                    <input type="submit" value="Register" />
-                </form>
-            </label>
+        <div className="messages">
+            {errorMessage()}
+            {successMessage()}
         </div>
+        <label className='registration'>
+            <h1>User Registration</h1>
+            <form onSubmit={submit}>
+                <label>
+                    Enter username:
+                    <input type="text" name="name" id="name" value={name} onChange = {(e)=> setName(e.target.value)}/>
+                </label>
+                <label>
+                    Enter email:
+                    <input type="email" name="email" id="email" value={email} onChange = {(e)=> setEmail(e.target.value)}/>
+                </label>
+                <label>
+                    Enter password:
+                    <input type="password" name="password" id="password" value={password} onChange = {(e)=> setPassword(e.target.value)}/>
+                </label>
+                <input className='submit' type="submit" value="Register" />
+            </form>
+        </label>
     </div>
     )
 }

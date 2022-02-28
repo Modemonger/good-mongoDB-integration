@@ -13,8 +13,8 @@ export const HeroPage = () => {
   else
   return(
     <div className='heroPage'>
-      <h2>Scheduler</h2>
-      <p>Quick way to fill out the schedule and <span>compare</span> it with others</p>
+      <h2 className='pageName'>Scheduler</h2>
+      <p className='pageDescription'>Quick way to fill out the schedule and <span>compare</span> it with others</p>
     </div>
   )
 }

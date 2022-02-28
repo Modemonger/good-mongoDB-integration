@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+* .Scheduler {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+* .Scheduler .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+* .Scheduler .heroPage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 4rem;
+}
+
+* .Scheduler .heroPage h2 {
+  font-size: 40px;
+}
+
+* .Scheduler .heroPage * {
+  margin: 2rem 0;
+}
+
+* .Scheduler .heroPage * span {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+* .Scheduler .registerPage {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+* .Scheduler .registerPage .messages {
+  margin-top: 2rem;
+}
+
+* .Scheduler .registerPage .messages .error {
+  color: red;
+}
+
+* .Scheduler .registerPage .messages .success {
+  color: green;
+}
+
+* .Scheduler .registerPage .registration {
+  position: absolute;
+  top: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+* .Scheduler .registerPage .registration h1 {
+  margin: 1rem 0;
+}
+
+* .Scheduler .registerPage .registration * {
+  margin: .25rem;
+}
+
+* .Scheduler .registerPage .registration form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+* .Scheduler .registerPage .registration .submit {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 6rem;
+  height: 3rem;
+  border: none;
+}
+
+* .Scheduler .loginPage {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+* .Scheduler .loginPage .messages {
+  margin-top: 2rem;
+}
+
+* .Scheduler .loginPage .messages .error {
+  color: red;
+}
+
+* .Scheduler .loginPage .messages .success {
+  color: green;
+}
+
+* .Scheduler .loginPage .login {
+  position: absolute;
+  top: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+* .Scheduler .loginPage .login h1 {
+  margin: 1rem 0;
+}
+
+* .Scheduler .loginPage .login * {
+  margin: .25rem;
+}
+
+* .Scheduler .loginPage .login form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+* .Scheduler .loginPage .login .submit {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 6rem;
+  height: 3rem;
+  border: none;
+}
+
+* .footer {
+  position: absolute;
+  bottom: 0;
+}
+/*# sourceMappingURL=style.css.map */

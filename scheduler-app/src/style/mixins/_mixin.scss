@@ -1,0 +1,11 @@
+@mixin dfCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin dfSpaceAround{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

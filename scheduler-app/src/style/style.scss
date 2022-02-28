@@ -1,0 +1,111 @@
+@import './mixins/mixin';
+
+*{
+    margin: 0;
+    padding: 0;
+    .Scheduler{
+        width: 100vw;
+        min-height: 100vh;
+        .links{
+            @include dfSpaceAround;
+        }
+        .heroPage{
+            @include dfCenter;
+            flex-direction: column;
+            margin-top: 4rem;
+            h2{
+                font-size: 40px;
+            }
+            *{
+                margin: 2rem 0;
+                span{
+                    font-size: 22px;
+                    font-weight: bold;
+                }
+            }
+        }
+        .registerPage{
+            position: relative;
+            @include dfCenter;
+            flex-direction: column;
+
+            .messages{
+                margin-top: 2rem;
+                .error{
+                    color: red;
+                }
+                .success{
+                    color: green;
+                }
+            }
+
+            .registration{
+                position: absolute;
+                top: 20vh;
+                @include dfCenter;
+                flex-direction: column;
+                h1{
+                    margin: 1rem 0;
+                }
+                *{
+                    margin: .25rem;
+                }
+                form{
+                    @include dfSpaceAround;
+                    align-items: flex-end;
+                    flex-direction: column;
+                }
+                .submit{
+                    align-self: center;
+                    width: 6rem;
+                    height: 3rem;
+                    border: none;
+                }
+            }
+        }
+        .loginPage{
+            position: relative;
+            @include dfCenter;
+            flex-direction: column;
+
+            .messages{
+                margin-top: 2rem;
+                .error{
+                    color: red;
+                }
+                .success{
+                    color: green;
+                }
+            }
+
+            .login{
+                position: absolute;
+                top: 20vh;
+                @include dfCenter;
+                flex-direction: column;
+                h1{
+                    margin: 1rem 0;
+                }
+                *{
+                    margin: .25rem;
+                }
+                form{
+                    @include dfSpaceAround;
+                    align-items: flex-end;
+                    flex-direction: column;
+                }
+                .submit{
+                    align-self: center;
+                    width: 6rem;
+                    height: 3rem;
+                    border: none;
+                }
+                
+            }
+        }
+    }
+    .footer{
+        position: absolute;
+        bottom: 0;
+    }
+}

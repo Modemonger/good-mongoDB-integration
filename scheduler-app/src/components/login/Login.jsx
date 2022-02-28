@@ -42,10 +42,12 @@ export const Login = () => {
 
     const submit = e => {
         e.preventDefault();
+        if(email && password)
         axios.post('/api/users/login', {email: email, password: password})
         .then(response => response.data)
         .then(data => {
             window.localStorage.setItem('access_token', data.token);
+            console.log(data);
             setUser(data);
             setSubmitted(true);
             setError(false);
@@ -60,27 +62,25 @@ export const Login = () => {
     }
 
     return (
-        <div id='registerPage' className='registerPage'>
-            <div className="container">
-                <div className="messages">
-                    {errorMessage()}
-                    {successMessage()}
-                </div>
-                <label>
-                    <h1>User Sign in</h1>
-                    <form onSubmit={submit}>
-                        <label>
-                            Enter email:
-                            <input type="email" name="email" id="email" value={email} onChange = {(e)=> setEmail(e.target.value)}/>
-                        </label>
-                        <label>
-                            Enter password:
-                            <input type="password" name="password" id="password" value={password} onChange = {(e)=> setPassword(e.target.value)}/>
-                        </label>
-                        <input type="submit" value="Sign in" />
-                    </form>
-                </label>
+        <div id='loginPage' className='loginPage'>
+            <div className="messages">
+                {errorMessage()}
+                {successMessage()}
             </div>
+            <label className='login'>
+                <h1>User Sign in</h1>
+                <form onSubmit={submit}>
+                    <label>
+                        Enter email:
+                        <input type="email" name="email" id="email" value={email} onChange = {(e)=> setEmail(e.target.value)}/>
+                    </label>
+                    <label>
+                        Enter password:
+                        <input type="password" name="password" id="password" value={password} onChange = {(e)=> setPassword(e.target.value)}/>
+                    </label>
+                    <input className='submit' type="submit" value="Sign in" />
+                </form>
+            </label>
         </div>
     )
 }

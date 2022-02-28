@@ -9,9 +9,12 @@ const NavBar = () => {
   return (
         <div className='navBar'>
             <Router>
-                <Link to='/'>Home</Link>
-                <Link to='/register'>Signup</Link>
-                <Link to='/login'>Login</Link>
+                <div className='links'>
+                    <Link to='/'>Home</Link>
+                    <Link to='/register'>Signup</Link>
+                    <Link to='/login'>Login</Link>
+                </div>
+                
                 <Routes>
                     <Route path='/' element={<HeroPage />} />
                     <Route path='/register' element={<Register />} />
