@@ -17,6 +17,12 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  height: 3rem;
+  margin-bottom: 2rem;
+}
+
+* .Scheduler .links a {
+  text-decoration: none;
 }
 
 * .Scheduler .heroPage {
@@ -205,6 +211,99 @@
 }
 
 * .Scheduler .loginPage .login .submit {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 6rem;
+  height: 3rem;
+  border: none;
+}
+
+* .Scheduler .userPage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: relative;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+* .Scheduler .userPage * {
+  margin: 0 2rem;
+}
+
+* .Scheduler .userPage .schedule {
+  width: 25rem;
+}
+
+* .Scheduler .userPage .scheduleForm {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+* .Scheduler .userPage .scheduleForm .hide {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  top: 0;
+  right: 0;
+}
+
+* .Scheduler .userPage .scheduleForm form {
+  width: 20rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+* .Scheduler .userPage .scheduleForm form * {
+  width: 100%;
+  margin: .25rem 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+* .Scheduler .userPage .scheduleForm form * input {
+  height: 2rem;
+}
+
+* .Scheduler .userPage .scheduleForm form * * {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+* .Scheduler .userPage .scheduleForm form .submit {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;

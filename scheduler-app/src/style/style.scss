@@ -8,6 +8,12 @@
         min-height: 100vh;
         .links{
             @include dfSpaceAround;
+            height: 3rem;
+            margin-bottom: 2rem;
+            a{
+                text-decoration: none;
+
+            }
         }
         .heroPage{
             @include dfCenter;
@@ -56,10 +62,7 @@
                     flex-direction: column;
                 }
                 .submit{
-                    align-self: center;
-                    width: 6rem;
-                    height: 3rem;
-                    border: none;
+                    @include submit;
                 }
             }
         }
@@ -95,12 +98,54 @@
                     flex-direction: column;
                 }
                 .submit{
-                    align-self: center;
-                    width: 6rem;
-                    height: 3rem;
-                    border: none;
+                    @include submit;
                 }
                 
+            }
+        }
+        .userPage{
+            @include dfCenter;
+            align-items: flex-start;
+            position: relative;
+            flex-wrap: wrap;
+            *{
+                margin: 0 2rem;
+            }
+            .schedule{
+                width: 25rem;
+            }
+            .scheduleForm{
+                position: relative;
+                @include dfCenter;
+                flex-direction: column;
+                margin-bottom: 2rem;
+                .hide{
+                    position: absolute;
+                    width: 2rem;
+                    height: 2rem;
+                    top: 0;
+                    right: 0;
+                }
+                form{
+                    width: 20rem;
+                    display: flex;
+                    flex-direction: column;
+                    *{
+                        width: 100%;
+                        margin: .25rem 0;
+                        align-items: center;
+                        justify-content: space-between;
+                        input{
+                            height: 2rem;
+                        }
+                        *{
+                            display: inline-flex;
+                        }
+                    }
+                    .submit{
+                        @include submit;
+                    }
+                }
             }
         }
     }

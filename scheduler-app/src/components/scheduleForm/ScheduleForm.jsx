@@ -8,6 +8,8 @@ export const ScheduleForm = () => {
 
     let token = window.localStorage.getItem('access_token');
 
+    const [hide, setHide] = useState(true);
+
     const [formData, setFormData] = useState({
         title: '',
         description: '',
@@ -38,11 +40,12 @@ export const ScheduleForm = () => {
     }
 
     return (
-        <label>
+        <label className='scheduleForm'>
+            <button className='hide' onClick={(event) => {event.preventDefault(); setHide(!hide)}}>+</button>
             Fill out a schedule event.
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} style={{display: hide ? 'flex' : 'none'}}>
                 <label>
-                    Title:
+                    <p>Title:</p>
                     <input type="text" 
                         name="title" 
                         id="title" 
@@ -52,7 +55,7 @@ export const ScheduleForm = () => {
                         />
                 </label>
                 <label>
-                    Description:
+                    <p>Description:</p>
                     <input type="text" 
                         name="description" 
                         id="title" 
@@ -61,7 +64,7 @@ export const ScheduleForm = () => {
                         />
                 </label>
                 <label>
-                    Starts at:
+                    <p>Starts at:</p>
                     <input type="time" name="time_start" id="startsAt"
                         required={true}
                         value={time_start}
@@ -69,7 +72,7 @@ export const ScheduleForm = () => {
                     />
                 </label>
                 <label>
-                    Ends at:
+                    <p>Ends at:</p>
                     <input type="time" name="time_end" id="endsAt" 
                         required={true}
                         value={time_end}
@@ -77,14 +80,14 @@ export const ScheduleForm = () => {
                     />
                 </label>
                 <label>
-                    Day:
+                    <p>Day:</p>
                     <input type="date" name="date" id="date" 
                         required={true}
                         value={date}
                         onChange={onChange}
                     />
                 </label>
-                <input type="submit" value="Submit" />
+                <input className='submit' type="submit" value="Submit" />
             </form>
         </label>
     )

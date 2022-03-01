@@ -9,3 +9,10 @@
     align-items: center;
     justify-content: space-around;
 }
+
+@mixin submit{
+    align-self: center;
+    width: 6rem;
+    height: 3rem;
+    border: none;
+}

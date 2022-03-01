@@ -31,27 +31,32 @@ export const UserPage = () => {
 
     if(schedule)
     return (
-        <div>
+        <div className='userPage' >
             <h3>{userState.name}</h3>
-            {
-                schedule.map( item => {
-                    return (
-                        <div key={item._id}>
-                            <p>{item.title}</p>
-                            <p>{item.description}</p>
-                            <p>{item.time_start}</p>
-                            <p>{item.time_end}</p>
-                            <button onClick={(event) => removeItem(event, item._id)}>Remove</button>
-                        </div>
-                    )
-                })
-            }
-            <ScheduleForm />
+            <div className="schedule">
+                <ScheduleForm />
+                <div className="itemContainer">
+                {
+                    schedule.map( item => {
+                        return (
+                            <div className='item' key={item._id}>
+                                <p>{item.title}</p>
+                                <p>{item.description}</p>
+                                <p>{item.time_start}</p>
+                                <p>{item.time_end}</p>
+                                <button className='remove' onClick={(event) => removeItem(event, item._id)}>Remove</button>
+                            </div>
+                        )
+                    })
+                }
+                </div>
+            </div>
+            
         </div>
     )
     else 
     return (
-        <div>
+        <div className='userPage'>
             <h3>{userState.name}</h3>
             <ScheduleForm />
         </div>
