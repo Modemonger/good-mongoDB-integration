@@ -41,9 +41,12 @@ export const ScheduleForm = () => {
 
     return (
         <label className='scheduleForm'>
-            <button className='hide' onClick={(event) => {event.preventDefault(); setHide(!hide)}}>+</button>
-            Fill out a schedule event.
-            <form onSubmit={onSubmit} style={{display: hide ? 'flex' : 'none'}}>
+            
+            <p className='formTitle'>
+                Fill out a schedule event.
+                <button className='hide' onClick={(event) => {event.preventDefault(); setHide(!hide)}}>+</button>
+            </p>
+            <form onSubmit={onSubmit} style={{display: hide ? 'none' : 'flex'}}>
                 <label>
                     <p>Title:</p>
                     <input type="text" 

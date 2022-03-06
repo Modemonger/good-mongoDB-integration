@@ -3,6 +3,7 @@ import React, { useContext, useEffect } from 'react';
 import { useState } from 'react';
 import { UserContext } from '../../context/UserContext';
 import { ScheduleForm } from '../scheduleForm/ScheduleForm';
+import { UserSearch } from '../userSearch/UserSearch';
 
 export const UserPage = () => {
 
@@ -20,7 +21,7 @@ export const UserPage = () => {
                 setSchedule(data);
             })
             .catch(err => console.log(err))
-        }, 2000)
+        }, 1000)
     }, [schedule])
 
     function removeItem(e,id){
@@ -32,26 +33,28 @@ export const UserPage = () => {
     if(schedule)
     return (
         <div className='userPage' >
-            <h3>{userState.name}</h3>
+           
             <div className="schedule">
+                <h3>{userState.name}</h3>
                 <ScheduleForm />
-                <div className="itemContainer">
-                {
-                    schedule.map( item => {
-                        return (
-                            <div className='item' key={item._id}>
-                                <p>{item.title}</p>
-                                <p>{item.description}</p>
-                                <p>{item.time_start}</p>
-                                <p>{item.time_end}</p>
-                                <button className='remove' onClick={(event) => removeItem(event, item._id)}>Remove</button>
-                            </div>
-                        )
-                    })
-                }
-                </div>
+                
             </div>
-            
+            <div className="itemContainer">
+            {
+                schedule.map( item => {
+                    return (
+                        <div className='item' key={item._id}>
+                            <p>{item.title}</p>
+                            <p>{item.description}</p>
+                            <p>{item.time_start}</p>
+                            <p>{item.time_end}</p>
+                            <button className='remove' onClick={(event) => removeItem(event, item._id)}>Remove</button>
+                        </div>
+                    )
+                })
+            }
+            </div>
+            <UserSearch />
         </div>
     )
     else 

@@ -19,6 +19,7 @@
       justify-content: space-around;
   height: 3rem;
   margin-bottom: 2rem;
+  background-color: #eee;
 }
 
 * .Scheduler .links a {
@@ -229,9 +230,10 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -239,10 +241,6 @@
 
 * .Scheduler .userPage * {
   margin: 0 2rem;
-}
-
-* .Scheduler .userPage .schedule {
-  width: 25rem;
 }
 
 * .Scheduler .userPage .scheduleForm {
@@ -260,15 +258,36 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 2rem;
+  width: 20rem;
+  margin: 2rem 0;
 }
 
-* .Scheduler .userPage .scheduleForm .hide {
-  position: absolute;
+* .Scheduler .userPage .scheduleForm * {
+  margin: .25em 0;
+}
+
+* .Scheduler .userPage .scheduleForm .formTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+* .Scheduler .userPage .scheduleForm .formTitle .hide {
   width: 2rem;
   height: 2rem;
-  top: 0;
-  right: 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border-radius: 50%;
 }
 
 * .Scheduler .userPage .scheduleForm form {
@@ -313,7 +332,6 @@
 }
 
 * .footer {
-  position: absolute;
   bottom: 0;
 }
 /*# sourceMappingURL=style.css.map */

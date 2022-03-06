@@ -10,6 +10,7 @@
             @include dfSpaceAround;
             height: 3rem;
             margin-bottom: 2rem;
+            background-color: #eee;
             a{
                 text-decoration: none;
 
@@ -105,27 +106,32 @@
         }
         .userPage{
             @include dfCenter;
-            align-items: flex-start;
+            flex-direction: column;
             position: relative;
             flex-wrap: wrap;
             *{
                 margin: 0 2rem;
             }
-            .schedule{
-                width: 25rem;
-            }
             .scheduleForm{
                 position: relative;
                 @include dfCenter;
                 flex-direction: column;
-                margin-bottom: 2rem;
-                .hide{
-                    position: absolute;
-                    width: 2rem;
-                    height: 2rem;
-                    top: 0;
-                    right: 0;
+                width: 20rem;
+                margin: 2rem 0;
+                *{
+                    margin: .25em 0;
                 }
+                .formTitle{
+                    @include dfCenter;
+                    justify-content: space-between;
+                    .hide{
+                        width: 2rem;
+                        height: 2rem;
+                        align-self: center;
+                        border-radius: 50%;
+                    }
+                }
+                
                 form{
                     width: 20rem;
                     display: flex;
@@ -150,7 +156,6 @@
         }
     }
     .footer{
-        position: absolute;
         bottom: 0;
     }
 }
