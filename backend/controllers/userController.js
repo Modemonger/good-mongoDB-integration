@@ -31,8 +31,7 @@ const registerUser = asyncHandler( async (req, res) => {
     const user = await User.create({
         name,
         email,
-        password: hashedPassword.digest('hex'),
-        salt: salt
+        password: hashedPassword.digest('hex')
     });
 
     if(user){
@@ -55,7 +54,8 @@ const loginUser = asyncHandler( async (req, res) => {
 
     const  user = await User.findOne({email});
 
-    const hashed = await crypto.createHmac('sha256', user.salt);
+    const salt = await crypto.randomBytes(Math.ceil(password.length/2)).toString('hex');
+    const hashed = await crypto.createHmac('sha256', salt);
     hashed.update(password);
 
     if( user && (hashed.digest('hex') === user.password)){

@@ -14,10 +14,6 @@ const userSchema = mongoose.Schema(
             type: String,
             required: [true, 'Please write password']
         },
-        salt: {
-            type: String,
-            required: [true, 'Salt is required']
-        }
     },
     {
         timestamp: true
