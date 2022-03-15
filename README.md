@@ -7,7 +7,7 @@
     Delete \
 **Methods.**
 
-### Uses user authentication and password hashing.
+### Uses user token authentication and password hashing.
 
 ## Create `.env` file with:
     DB_KEY = <mongoDB connection string with password>
